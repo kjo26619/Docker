@@ -16,9 +16,102 @@ Nginx 는 무료 오픈 소스 HTTP 서버이며 HTTP 프록시, 메일 프록�
 
 Nginx 서버의 Image는 https://hub.docker.com 에서 찾아볼 수 있다.
 
+# Container Commands 
+
 Nginx Container를 만들기 위해서 run 명령어를 사용한다.
 
 ```
 # docker container run --publish 80:80 nginx
 ```
 
+다음과 같은 결과를 얻을 수 있다.
+
+![image1]
+
+Local image 저장소에는 Nginx가 없기 때문에 인터넷에서 받아오는 것을 알 수 있다.
+
+![image2]
+
+여기서, --publish 옵션은 -p와 같은 옵션으로 port를 지정하는 것이다. 
+
+port의 구성은 [Host Port:Container Port] 로 구성된다.
+
+하지만 docker container run 명령어로 들어올 경우 Container 안에 진입하면서 Log만 볼 수 있는 상태가 된다.
+
+다른 작업을 하기 위해서는 Ctrl+C를 통해서 빠져 나와야 하는데 그러면 Container도 같이 종료되는 것을 확인할 수 있다.
+
+이를 위해서 --detach 혹은 -d 옵션을 이용해서 Background로 Container가 run 되게끔 하면 된다.
+
+```
+# docker container run --detach (IMAGE NAME)
+```
+
+![image3]
+
+현재 Docker에서 실행 중인 Container를 확인하고 싶으면 docker container ls 명령어를 사용하면 된다.
+
+```
+# docker container ls
+```
+
+![image4]
+
+종료하고 싶으면 stop 명령어를 사용하면 종료할 수 있다.
+
+```
+# docker container stop (COTAINER ID or NAME)
+```
+
+![image5]
+
+![image6]
+
+종료된 Cotainer까지 포함하여 모든 Container 리스트를 확인하고 싶으면 ls 명령어에 -a 옵션을 붙이면 된다.
+
+```
+# docker container ls -a
+```
+
+![image7]
+
+여기서 run 명령어에 대해서 알 수 있는데 run 명령어는 반드시 새로운 container를 제작한다.
+
+그래서 detach 하지 않은 Nginx와 detach 했던 Nginx 두 개의 Nginx Container가 있는 것을 확인할 수 있다.
+
+기존의 Container를 실행하기 위한 명령어는 start 명령어이다.
+
+```
+# docker container start (CONTAINER ID or NAME)
+```
+
+![image8]
+
+Docker는 Container를 만들 때 Container의 이름을 지정해줄 수 있는데 ls 명령어에 맨 마지막 NAMES가 지정한 이름이다.
+
+지정은 --name 옵션을 통해서 지정한다.
+
+```
+# docker container run --name (CONTAINER NAME) (IMAGE NAME)
+```
+
+![image9]
+
+그리고 logs 명령어를 통해서 자세한 Cotainer log 를 확인할 수 있고 top 명령어를 통해서 Container의 Process를 확인할 수 있다.
+
+```
+# docker container logs (CONTAINER ID or NAME)
+
+# docker container top (CONTAINER ID or NAME)
+```
+
+![image10]
+
+마지막으로, rm 명령어를 사용해서 Container를 제거할 수 있다.
+
+```
+# docker container rm (CONTAINER ID or NAME)
+```
+
+하지만, 제거할 때 Running 중인 Container는 지울 수 없다. Container를 종료한 뒤 삭제하거나 rm 명령어에서 -f 옵션을 사용하여 제거한다.
+
+![image11]
