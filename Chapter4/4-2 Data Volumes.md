@@ -28,7 +28,7 @@ https://github.com/mysql/mysql-docker/blob/mysql-server/8.0/Dockerfile
 
 Mounts 항목에 있으며 여기서 Source는 Host에 있는 디렉토리를 Container 내부에 Destination으로 연결한다는 것이다.
 
-그리고 docker volume ls를 통해서 현재 있는 docker volume list에 대해서 확인할 수 있다.
+그리고 docker volume ls를 통해서 현재 있는 Volume 리스트에 대해서 확인할 수 있다.
 
 ```
 # docker volume ls
