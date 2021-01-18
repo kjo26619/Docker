@@ -6,7 +6,7 @@ Docker 내부는 매우 동적이고 빠르게 변화하므로 IP 주소에 의�
 
 이러한 Docker DNS에 의해서 같은 내부 네트워크에 속해 있는 Container 끼리는 서로 이름으로 통신할 수 있다.
 
-![image1]()
+![image1](https://github.com/kjo26619/Docker/blob/main/Chapter2/Image/dns1.PNG)
 
 - 주의 : Nginx:latest에는 ping이 포함되어 있지 않으므로 apt update && apt install iputils-ping 을 exec 명령어로 실행해서 설치해야 진행할 수 있음.
 
