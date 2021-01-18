@@ -28,7 +28,7 @@ Bridge 네트워크에서는 Container를 만들 때 수동으로 --link 옵션�
 
 # DNS Round Robin
 
-DNS Round Robint은 각 서버에 부하를 분산하기 위해 여러 IP 주소를 하나의 Alias로 설정하는 방법이다.
+DNS Round Robin은 각 서버에 부하를 분산하기 위해 여러 IP 주소를 하나의 Alias로 설정하는 방법이다.
 
 즉, 3개의 같은 웹 서버 Container가 있지만 DNS는 하나의 Alias로 묶어준다.
 
