@@ -60,5 +60,7 @@ Volume 이름을 지정했을 때 Volume이 존재하지 않을 경우 새로운
 
 ![image6](https://github.com/kjo26619/Docker/blob/main/Chapter4/Image/volume6.PNG)
 
+위 결과에서 MySQL 2를 만들 때 Volume을 기존의 mysql-db로 지정해주었고 새로운 것이 생기지 않고 기존의 Volume과 연결된 것을 확인할 수 있다.
+
 이렇게 고유 데이터를 유지하고 Container 업데이트를 할 수 있게끔 하는 것이 Volume이다.
 
