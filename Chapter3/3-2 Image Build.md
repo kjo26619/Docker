@@ -46,10 +46,10 @@ Image의 리스트를 보고 싶으면 docker image ls 명령을 사용하면 �
 
 이와 같이 자신이 원하는 다양한 Custom Image를 만들어낼 수 있다.
 
-그리고 이를 Hub에 올리거나 Image에 REPOSITORY 이름을 변경하고 싶을 때에는 docker image tag 명령을 통해 바꿀 수 있다.
+그리고 이를 Hub에 올리거나 Image에 REPOSITORY 이름이나 TAG를 변경하고 싶을 때에는 docker image tag 명령을 통해 바꿀 수 있다.
 
 ```
-# docker image tag (SOURCE IMAGE NAME) (TARGET IMAGE NAME)
+# docker image tag (SOURCE IMAGE NAME[:TAG]) (TARGET IMAGE NAME[:TAG])
 ```
 
 ![image6](https://github.com/kjo26619/Docker/blob/main/Chapter3/Image/build6.PNG)
