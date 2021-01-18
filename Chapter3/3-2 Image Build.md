@@ -52,5 +52,5 @@ Image의 리스트를 보고 싶으면 docker image ls 명령을 사용하면 �
 # docker image tag (SOURCE IMAGE NAME) (TARGET IMAGE NAME)
 ```
 
-!(image6)(https://github.com/kjo26619/Docker/blob/main/Chapter3/Image/build6.PNG)
+![image6](https://github.com/kjo26619/Docker/blob/main/Chapter3/Image/build6.PNG)
 
