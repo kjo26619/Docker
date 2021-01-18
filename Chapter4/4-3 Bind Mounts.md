@@ -8,6 +8,7 @@ Bind Mounts는 run 명령어를 할 때 -v 옵션을 통해서 지정할 수 있
 
 ```
 # docker container run -v (Host File or Directory:Container File or Directory) (IMAGE NAME)
+```
 
 Container가 만들어 질 때 Bind Mounts 되면서 서로 연결되게 된다.
 
