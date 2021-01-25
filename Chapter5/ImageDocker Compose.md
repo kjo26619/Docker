@@ -72,7 +72,7 @@ YAML 파일을 모두 구성했다면 docker-compose up 명령어를 통해서 C
 
 up을 할 때에는 디렉토리 내에 docker-compose.yml이나 docker-compose.yaml 파일이 존재해야 한다. 
 
-![image1]()
+![image1](https://github.com/kjo26619/Docker/blob/main/Chapter5/Image/compose1.PNG)
 
 사용할 YAML 파일을 구성한다. 본래 강좌에서는 Proxy를 위한 conf 파일이 존재하지만 어려워서 제외했다.
 
@@ -80,9 +80,9 @@ up을 할 때에는 디렉토리 내에 docker-compose.yml이나 docker-compose.
 
 여기서, -d 옵션을 사용하면 run 명령어와 마찬가지로 백그라운드에서 동작할 수 있다.
 
-![image2]()
+![image2](https://github.com/kjo26619/Docker/blob/main/Chapter5/Image/compose2.PNG)
 
-![image3]()
+![image3](https://github.com/kjo26619/Docker/blob/main/Chapter5/Image/compose3.PNG)
 
 docker container 명령어로 확인할 수 있지만 docker-compose ps나 docker-compose top 명령어를 통해서 현재 Compose에 의해 만들어진 container들을 확인할 수 있다.
 
@@ -94,7 +94,7 @@ docker container 명령어로 확인할 수 있지만 docker-compose ps나 docke
 # docker-compose top
 ```
 
-![image4]()
+![image4](https://github.com/kjo26619/Docker/blob/main/Chapter5/Image/compose4.PNG)
 
 다음으로 up이 아니라 down 명령어를 통해서 작성한 서비스를 종료하고 Container, Volume, Network를 모두 제거할 수 있다.
 
@@ -102,9 +102,9 @@ docker container 명령어로 확인할 수 있지만 docker-compose ps나 docke
 # docker-compose down
 ```
 
-![image5]()
+![image5](https://github.com/kjo26619/Docker/blob/main/Chapter5/Image/compose5.PNG)
 
-![image6]()
+![image6](https://github.com/kjo26619/Docker/blob/main/Chapter5/Image/compose6.PNG)
 
 down 명령어를 사용하면 Container를 종료시키고 삭제까지 하는 것을 확인할 수 있다.
 
