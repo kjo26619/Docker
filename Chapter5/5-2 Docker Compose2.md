@@ -10,7 +10,7 @@ Postgresql에 대한 Image 내용은 https://github.com/docker-library/postgres 
 
 Docker Compose를 위해 YAML 파일을 구성한다.
 
-![image1]()
+![image1](https://github.com/kjo26619/Docker/blob/main/Chapter5/Image/drupal1.PNG)
 
 ports는 run에서의 -p 옵션과 같으며 포트 포워딩을 지정한다. volumes는 Drupal의 Docker Hub에 들어가면 설정하는 방법이 적혀있다.
 
@@ -20,17 +20,17 @@ docker-compose up을 이용하여 만들면 기본 Network, 설정한 Volume, Co
 
 그리고 생성된 Volume과 Container를 ls 명령어로 확인한다.
 
-![image2]()
+![image2](https://github.com/kjo26619/Docker/blob/main/Chapter5/Image/drupal2.PNG)
 
 생성이 모두 끝났으면 localhost:8080으로 접속한다. 접속하면 Drupal 설정이 나오는 것을 확인할 수 있다.
 
-![image3]()
+![image3](https://github.com/kjo26619/Docker/blob/main/Chapter5/Image/drupal3.PNG)
 
 계속하면 DB 설정이 나온다. 여기서 사용한 Postgres로 지정한다.
 
-![image4]()
+![image4](https://github.com/kjo26619/Docker/blob/main/Chapter5/Image/drupal4.PNG)
 
-![image5]()
+![image5](https://github.com/kjo26619/Docker/blob/main/Chapter5/Image/drupal5.PNG)
 
 설정할 때 유의할 점은 DB의 Password를 YAML파일에서 environment로 지정했기 때문에 똑같이 써주어야 연결할 수 있다.
 
@@ -42,8 +42,8 @@ Container는 YAML파일을 통해 생성되어 drupal과 postgres라는 이름�
 
 마지막으로, 사이트를 지정하면 모두 완성된다.
 
-![image6]()
+![image6](https://github.com/kjo26619/Docker/blob/main/Chapter5/Image/drupal6.PNG)
 
-![image7]()
+![image7](https://github.com/kjo26619/Docker/blob/main/Chapter5/Image/drupal7.PNG)
 
 Drupal과 Postgresql 외에도 다양한 서버를 지정하고 만들어낼 수 있다.
