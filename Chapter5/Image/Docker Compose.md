@@ -42,15 +42,15 @@ networks:
 
     services에는 사용할 Container 서비스를 나열한다. 여러 개의 서비스를 나열할 수 있다.
     
-    1) servicename : Container의 이름이며 Docker DNS에서 사용하는 이름이다. 원하는 이름으로 지정하면 된다. 
+    (1) servicename : Container의 이름이며 Docker DNS에서 사용하는 이름이다. 원하는 이름으로 지정하면 된다. 
     
-    2) image : Container가 사용할 Image를 선택한다. run과 흡사하여 'redis' 이렇게 사용하면 latest를 정의한다. 뒤에 버전을 붙일 수 있다. ex) 'nginx:1.11' 
+    (2) image : Container가 사용할 Image를 선택한다. run과 흡사하여 'redis' 이렇게 사용하면 latest를 정의한다. 뒤에 버전을 붙일 수 있다. ex) 'nginx:1.11' 
     
-    3) command : Image에서 사용하는 기본 CMD를 대체할 command를 설정한다. (Optinal)
+    (3) command : Image에서 사용하는 기본 CMD를 대체할 command를 설정한다. (Optinal)
     
-    4) environment : docker run 할 때 -e 옵션과 같으며, 환경 변수 값을 지정할 수 있다. (Optinal)
+    (4) environment : docker run 할 때 -e 옵션과 같으며, 환경 변수 값을 지정할 수 있다. (Optinal)
     
-    5) volumes : docker run 할 때 -v 옵션과 같으며, 사용할 volume이나 bind mounts를 지정할 수 있다. (Optinal)
+    (5) volumes : docker run 할 때 -v 옵션과 같으며, 사용할 volume이나 bind mounts를 지정할 수 있다. (Optinal)
     
 3. volumes (Optinal)
     
