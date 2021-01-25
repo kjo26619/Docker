@@ -61,3 +61,51 @@ networks:
     docker network create 명령어와 같으며, 서비스에서 사용할 network를 생성한다.
     
 이 외에도 Container 구성을 위한 많은 설정들이 있다. 정확한 설정은 위에 있는 버전에 대한 docs를 참고하면 된다.
+
+# Docker Compose UP
+
+YAML 파일을 모두 구성했다면 docker-compose up 명령어를 통해서 Container를 생성하고 시작할 수 있다.
+
+```
+# docker-compose up
+```
+
+up을 할 때에는 디렉토리 내에 docker-compose.yml이나 docker-compose.yaml 파일이 존재해야 한다. 
+
+![image1]()
+
+사용할 YAML 파일을 구성한다. 본래 강좌에서는 Proxy를 위한 conf 파일이 존재하지만 어려워서 제외했다.
+
+그리고 명령어를 사용하면 YAML파일에 구성된 대로 Container가 생성되고 시작되는 것을 확인할 수 있다.
+
+여기서, -d 옵션을 사용하면 run 명령어와 마찬가지로 백그라운드에서 동작할 수 있다.
+
+![image2]()
+
+![image3]()
+
+docker container 명령어로 확인할 수 있지만 docker-compose ps나 docker-compose top 명령어를 통해서 현재 Compose에 의해 만들어진 container들을 확인할 수 있다.
+
+```
+# docker-compose ps
+```
+
+```
+# docker-compose top
+```
+
+![image4]()
+
+다음으로 up이 아니라 down 명령어를 통해서 작성한 서비스를 종료하고 Container, Volume, Network를 모두 제거할 수 있다.
+
+```
+# docker-compose down
+```
+
+![image5]()
+
+![image6]()
+
+down 명령어를 사용하면 Container를 종료시키고 삭제까지 하는 것을 확인할 수 있다.
+
+이렇게 Docker Compose를 이용하면 여러 Container를 한번에 생성하고 관리할 수 있는 장점을 가질 수 있다.
