@@ -46,4 +46,4 @@ Container는 YAML파일을 통해 생성되어 drupal과 postgres라는 이름�
 
 ![image7](https://github.com/kjo26619/Docker/blob/main/Chapter5/Image/drupal7.PNG)
 
-Drupal과 Postgresql 외에도 다양한 서버를 지정하고 만들어낼 수 있다.
+Drupal과 Postgresql 외에도 다양한 Image를 지정하고 여러 Container를 만들어낼 수 있다.
