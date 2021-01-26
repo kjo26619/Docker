@@ -18,7 +18,7 @@ Docker Overlay 네트워크를 확인하기 위해 기존에 했던 5-2에서의
 # docker network create --driver overlay (NETWORK NAME)
 ```
 
-![image1]()
+![image1](https://github.com/kjo26619/Docker/blob/main/Chapter6/Image/overlay1.PNG)
 
 docker network ls 명령어를 통해 Overlay 네트워크가 제대로 만들어졌는지 확인할 수 있다.
 
@@ -28,13 +28,13 @@ docker network ls 명령어를 통해 Overlay 네트워크가 제대로 만들�
 # docker service create --network (NETWORK NAME) (IMAGE)
 ```
 
-![image2]()
+![image2](https://github.com/kjo26619/Docker/blob/main/Chapter6/Image/overlay2.PNG)
 
 --name 옵션은 서비스의 이름을 지정해주는 것이고 -e 옵션은 환경 변수를 지정해 주는 것이다.
 
 Web의 역할을 하는 Drupal과 DB의 역할을 하는 Postgresql 서비스를 각각 만든다.
 
-![image3]()
+![image3](https://github.com/kjo26619/Docker/blob/main/Chapter6/Image/overlay3.PNG)
 
 Play-with-docker 에서 진행하면 열린 포트가 위와 같이 나오게 된다. 가상 노드를 생성하거나 웹 노드를 만들었다면, 브라우저에서 IP:포트 로 접속하면 5-2에서 했던 Drupal 설정이 나온다.
 
@@ -42,7 +42,7 @@ Play-with-docker 에서 진행하면 열린 포트가 위와 같이 나오게 �
 
 가상 노드나 웹 노드의 경우, 다른 노드의 IP:포트 로 접속하여도 역시 Drupal 홈페이지가 나온다는 것을 확인할 수 있다.
 
-![image4]()
+![image4](https://github.com/kjo26619/Docker/blob/main/Chapter6/Image/overlay4.PNG)
 
 서비스의 Overlay 네트워크를 이용해서 각 Container들이 다른 노드에 존재해도 서로 통신하기 때문에 아무 노드의 IP로 접속을 해도 같은 결과를 얻을 수 있는 것이다.
 
@@ -54,5 +54,5 @@ docker network inspect 명령어를 사용해서 네트워크에 대해 자세�
 # docker network inspect (NETWORK NAME)
 ```
 
-![image5]()
+![image5](https://github.com/kjo26619/Docker/blob/main/Chapter6/Image/overlay5.PNG)
 
