@@ -56,3 +56,28 @@ docker network inspect 명령어를 사용해서 네트워크에 대해 자세�
 
 ![image5](https://github.com/kjo26619/Docker/blob/main/Chapter6/Image/overlay5.PNG)
 
+# Routing Mesh
+
+Overlay 네트워크가 Container들 끼리 같은 네트워크로 묶고 서로 통신하는 것을 의미한다면 내부적으로는 어떻게 통신하는가가 의문이 생긴다.
+
+외부에서 포트로 들어오는 것을 허용하고 알맞은 Container를 찾아서 유저와 서비스를 연결해주는 것은 Routing Mesh 라는 기능으로 이루어진다.
+
+Routing Mesh는 Docker Swarm에서 외부 포트와 내부적으로 Container들을 찾아서 연결해주는 역할을 한다.
+
+![image6](https://docs.docker.com/engine/swarm/images/ingress-routing-mesh.png)
+
+< Routing Mesh > ( 출처 : https://docs.docker.com/engine/swarm/ingress/ )
+
+Docker Swarm을 사용하면 모든 노드는 ingress 라는 Routing Mesh에 참여한다.
+
+이러한 ingress 네트워크는 노드 간에 두 가지 포트를 통해서 Container 정보를 교환한다.
+
+1. 7946 : Container 네트워크 검색을 위한 TCP/UDP
+2. 4789 : Container ingress 네트워크 UDP
+
+그리고 서비스를 생성할 때 -p 명령어를 통해서 Swarm의 서비스 용 포트를 열게 된다. 그림에서의 8080 포트와 같다.
+
+외부에서 IP와 포트를 통해서 서비스를 요청하면 Swarm Load Balancer가 적절한 Container로 연결을 해준다. 
+
+유의해야될 점은 이러한 로드 밸런서가 Stateless 라는 점이다. 즉, 세션을 유지하지 않는다. 세션을 유지해야 한다면 추가 기능을 사용해야 한다. 
+
