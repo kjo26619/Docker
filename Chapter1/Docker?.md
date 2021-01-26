@@ -1,4 +1,4 @@
-# Docekr 란?
+# Docekr?
 
 Docker는 Container 기반 가상화 플랫폼이다.
 
