@@ -18,7 +18,7 @@ https://www.docker.com/play-with-docker
 
 그리고 돈을 내고 웹노드를 만들어주는 Digital Ocean이나 클라우드를 사용하는 방법이 있지만, 학습 목적이므로 Play-with-docker면 충분하다.
 
-![image1]()
+![image1](https://github.com/kjo26619/Docker/blob/main/Chapter6/Image/3swarm1.PNG)
 
 처음 들어가면 세션이 4시간 유지되며 노드를 늘릴 수 있고 노드를 늘리면 CLI 환경이 나오는 것을 확인할 수 있다.
 
@@ -34,13 +34,13 @@ Docker Swarm을 구성하고 각 노드가 Swarm에 참여하는 것을 보기 �
 
 주소는 세션에 따라 바뀔 수 있다.
 
-![image2]()
+![image2](https://github.com/kjo26619/Docker/blob/main/Chapter6/Image/3swarm2.PNG)
 
 init이 완료되면 Worker 노드로 Swarm에 참여하는 토큰과 명령어가 나온다. 이 명령어를 복사하여 다른 노드에서 사용해본다.
 
 브라우저에서 사용하는 CLI 환경이다 보니 Ctrl+C 복사가 먹히지 않는다. 크롬에서는 Ctrl+Insert 로 복사하고 Shift+Insert로 붙여넣으면 된다.
 
-![image3]()
+![image3](https://github.com/kjo26619/Docker/blob/main/Chapter6/Image/3swarm3.PNG)
 
 붙여넣은 명령어를 다른 노드에서 사용해보면 Swarm에 Worker 노드로 참여했음을 보여준다.
 
@@ -50,7 +50,7 @@ init이 완료되면 Worker 노드로 Swarm에 참여하는 토큰과 명령어�
 # docker node ls
 ```
 
-![image4]()
+![image4](https://github.com/kjo26619/Docker/blob/main/Chapter6/Image/3swarm4.PNG)
 
 Worker로 참여한 노드를 Manager 노드로 바꿀 수 있는 명령어가 있다.
 
@@ -60,7 +60,7 @@ Worker로 참여한 노드를 Manager 노드로 바꿀 수 있는 명령어가 �
 # docker node update --role (manager or worker) (NODE NAME)
 ```
 
-![image5]()
+![image5](https://github.com/kjo26619/Docker/blob/main/Chapter6/Image/3swarm5.PNG)
 
 Manager 역할을 지정하고 docker node ls를 사용해보면 MANAGER STATUS가 Reachable로 바뀌는 것을 확인할 수 있다.
 
@@ -68,7 +68,7 @@ Manager 역할을 지정하고 docker node ls를 사용해보면 MANAGER STATUS�
 
 이는 Swarm init한 Leader에서 docker swarm join-token manager 명령어를 사용하면 Worker와 똑같지만 토큰이 다른 명령어가 나오고 이를 다른 노드에서 사용하면 된다.
 
-![image6]()
+![image6](https://github.com/kjo26619/Docker/blob/main/Chapter6/Image/3swarm6.PNG)
 
 이제 서비스를 만들어보면 Swarm으로 묶여있는 3개의 노드에 어떻게 서비스와 Container가 배치되는 지 확인할 수 있다.
 
@@ -78,7 +78,7 @@ docker service create 명령어를 사용하여 서비스를 만든다. 그 때,
 # docker service create --replicas (NO. OF REPLICA) (IMAGE) (COMMAND)
 ```
 
-![image7]()
+![image7](https://github.com/kjo26619/Docker/blob/main/Chapter6/Image/3swarm7.PNG)
 
 docker service ls 명령어를 사용하면 서비스가 생성된 것을 확인할 수 있다.
 
@@ -92,7 +92,7 @@ docker service ls 명령어를 사용하면 서비스가 생성된 것을 확인
 # docker node ps (NODE ID or NAME)
 ```
 
-![image8]()
+![image8](https://github.com/kjo26619/Docker/blob/main/Chapter6/Image/3swarm8.PNG)
 
 그런데 서비스 이름 뒤에 숫자가 붙으면서 각 노드마다 다른 서비스가 진행되고 있음을 확인할 수 있다.
 
@@ -102,15 +102,15 @@ docker service ls 명령어를 사용하면 서비스가 생성된 것을 확인
 # docker service ps (SERVICE ID or NAME)
 ```
 
-![image9]()
+![image9](https://github.com/kjo26619/Docker/blob/main/Chapter6/Image/3swarm9.PNG)
 
 이 명령어를 통해서 각 서비스가 어느 노드들에 위치해있는 지를 확인할 수 있다. 각 노드 3개에 서비스 Replica 3개가 나누어져서 들어가있는 것이다.
 
 실제로, docker container ls를 사용해보면 하나의 노드에 하나의 Container만 만들어져있음을 확인할 수 있다.
 
-![image10]()
+![image10](https://github.com/kjo26619/Docker/blob/main/Chapter6/Image/3swarm10.PNG)
 
-![image11]()
+![image11](https://github.com/kjo26619/Docker/blob/main/Chapter6/Image/3swarm11.PNG)
 
 노드 1과 2 모두 같은 Swarm 내에 있고 같은 서비스를 가지고 있다. 하지만, 서비스의 Replica가 나누어져서 들어가고 Container는 하나만 만들어져있는 것을 확인할 수 있다.
 
