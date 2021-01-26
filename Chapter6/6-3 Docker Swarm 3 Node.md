@@ -22,7 +22,7 @@ https://www.docker.com/play-with-docker
 
 처음 들어가면 세션이 4시간 유지되며 노드를 늘릴 수 있고 노드를 늘리면 CLI 환경이 나오는 것을 확인할 수 있다.
 
-Docker Swarm을 구성하고 각 노드가 Swarm에 참여하는 것을 보기 위해 먼저, docker swarm init을 이용한다.
+만든 노드에서 Docker Swarm을 구성하고 각 노드가 Swarm에 참여하는 것을 보기 위해 먼저, docker swarm init을 이용한다.
 
 ```
 # docker swarm init
@@ -30,7 +30,7 @@ Docker Swarm을 구성하고 각 노드가 Swarm에 참여하는 것을 보기 �
 
 이 환경에서는 두 가지 이더넷이 있어서 eth가 2개 있어서 Advertise 주소를 지정해주어야 된다는 에러 구문이 나올 것이다. 
 
-다른 노드들이 192.168.0.x 네트워크에 묶여있으므로 --advertise-addr 옵션을 이용해서 Advertise 주소를 192.168.0.x로 지정한다. 
+노드들끼리는 192.168.0.x 네트워크에 묶여있으므로 --advertise-addr 옵션을 이용해서 Advertise 주소를 192.168.0.x로 지정한다. 
 
 주소는 세션에 따라 바뀔 수 있다.
 
