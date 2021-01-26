@@ -58,7 +58,7 @@ docker network inspect 명령어를 사용해서 네트워크에 대해 자세�
 
 # Routing Mesh
 
-Overlay 네트워크가 Container들 끼리 같은 네트워크로 묶고 서로 통신하는 것을 의미한다면 내부적으로는 어떻게 통신하는가가 의문이 생긴다.
+Overlay 네트워크가 Container들 끼리 같은 네트워크로 묶고 서로 통신하는 것을 의미한다면 내부와 외부는 어떻게 통신하는가가 의문이 생긴다.
 
 외부에서 포트로 들어오는 것을 허용하고 알맞은 Container를 찾아서 유저와 서비스를 연결해주는 것은 Routing Mesh 라는 기능으로 이루어진다.
 
