@@ -72,6 +72,10 @@ docker serivce ls와 ps를 통해서 현재 동작 중인 서비스에 대해서
 
 서비스의 Replica를 3개로 업데이트 한 뒤 서비스 목록 등을 확인해보면 Replica가 증가하고 작동하고 있음을 확인할 수 있다.
 
+여기서, docker service update --help 명령어를 해보면 docker update와 유사하나 할 수 있는 옵션이 많은 것을 확인할 수 있다.
+
+실제로 Swarm을 쓰는 이유 중 하나로 각 서비스에 기존 docker update 보다 많은 옵션을 사용할 수 있다는 장점이 있다.
+
 ![image9](https://github.com/kjo26619/Docker/blob/main/Chapter6/Image/swarm9.PNG)
 
 이 때, docker container rm 명령어로 한 Container를 삭제해본 뒤 서비스의 상태를 확인해본다.
