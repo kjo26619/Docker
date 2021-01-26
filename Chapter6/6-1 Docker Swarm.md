@@ -60,3 +60,15 @@ Worker 노드는 Manager 노드에게 현재 작업 상태를 보고하여 Manag
 
 # Docker Swarm Service and Task
 
+![image2](https://docs.docker.com/engine/swarm/images/service-lifecycle.png)
+
+< Docker Swarm 서비스 생성 구조 > ( 출처 : https://docs.docker.com/engine/swarm/how-swarm-mode-works/services/ )
+
+Docker Swarm에서 작업(Task)이란, Docker Container를 실행하거나 여러 추가 기능, Container 내에서 실행하는 명령 등을 말한다.
+
+Swarm에서의 가장 작은 스케줄링 단위이며 Manager 노드가 Worker 노드에게 작업을 할당한다. 작업이 할당되면 노드 간에 작업이 이동하지 않는다.
+
+그렇다면 서비스(Service)는 Manager 또는 Worker 노드에서 실행할 여러 작업의 정의이다. 서비스를 생성할 때 Container 이미지를 구성하고 실행한 Container 내에서 실행할 명령 등을 정의한다.
+
+특정 수의 복제본(Replica) 작업을 만들고 배포하는 Replicated Services 모델과 모든 노드에서 작업을 수행하는 Global Services 모델이 있다.
+
