@@ -70,10 +70,7 @@ Routing Mesh는 Docker Swarm에서 외부 포트와 내부적으로 Container들
 
 Docker Swarm을 사용하면 모든 노드는 ingress 라는 Routing Mesh에 참여한다.
 
-이러한 ingress 네트워크는 노드 간에 두 가지 포트를 통해서 Container 정보를 교환한다.
-
-1. 7946 : Container 네트워크 검색을 위한 TCP/UDP
-2. 4789 : Container ingress 네트워크 UDP
+이러한 ingress 네트워크는 Overlay 네트워크이다.
 
 그리고 서비스를 생성할 때 -p 명령어를 통해서 Swarm의 서비스 용 포트를 열게 된다. 그림에서의 8080 포트와 같다.
 
