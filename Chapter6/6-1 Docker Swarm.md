@@ -36,16 +36,27 @@ Docker Swarm에는 여러 특징이 있다.
 
 10. 롤링 업데이트 : 서비스 업데이트를 위한 배포 시 서비스가 항시 유지될 수 있도록 배포하고 배포 시 생기는 지연을 제어할 수 있다. 그리고 이전 버전으로의 롤백 업데이트를 지원한다.
 
-# Docker Swarm Node
+# Docker Swarm Architecture
 
-Docker Swarm에는 2가지 노드가 있다. Manager 노드와 Worker 노드이다.
+![image1](https://docs.docker.com/engine/swarm/images/swarm-diagram.png)
+
+< Docker Swarm 구조 > ( 출처 : https://docs.docker.com/engine/swarm/how-swarm-mode-works/nodes/ )
+
+Docker Swarm은 다음과 같은 구조를 가지며 2가지 노드가 있다. Manager 노드와 Worker 노드이다.
 
 Docker Engine을 가지고 있다면 두 역할을 모두 수행할 수 있다.
 
-Manager 노드는 어플리케이션을 구성하는 서비스 정의를 받고 이를 관리하고 유지하는 기능을 가진 노드이다. Worker 노드들을 모니터링하면서 노드에게 서비스를 배포한다.
+Manager 노드는 어플리케이션을 구성하는 서비스 정의를 받고 이를 관리하고 유지하는 기능을 가진 노드이다. Worker 노드들을 모니터링하면서 노드에게 서비스를 배포하고 스케일링한다.
 
-Docker Swarm 클러스태 내에는 여러 Manager 노드가 존재할 수 있다.
+Docker Swarm 클러스태 내에는 여러 Manager 노드가 존재한다. 그리고 이들은 Raft 합의 알고리즘을 통해 상태를 서비스의 내부 상태가 일관되게 유지할 수 있도록 한다.
+
+Raft가 이루어지는 방식은 클러스터 내의 모든 작업을 기록하는 Leader Manager를 선출하는 방식으로 이루어진다. 
+
+선출된 Leader Manager가 모든 작업을 로그로 남기면 Swarm은 다른 Manager 노드에게 복제한다. 그리고 Leader Manager가 예기치 않게 종료되면 다른 Manager가 선출되어 작업을 이어받는다.
 
 Worker 노드는 Manager 노드에게 받은 작업을 수행하고 처리하는 노드이다. 
 
 Worker 노드는 Manager 노드에게 현재 작업 상태를 보고하여 Manager 노드가 원하는 상태를 유지할 수 있도록 한다.
+
+# Docker Swarm Service and Task
+
