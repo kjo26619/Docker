@@ -59,7 +59,7 @@ Stack 역시 services, volumes, networks 로 이루어진다. 대신 네트워�
 Stack이 지워지면서 서비스, 서비스를 구성하는 Container, 네트워크가 모두 같이 삭제된다.
 
 ```
-
+# docker stack rm (STACK NAME)
 ```
 
 ![image6](https://github.com/kjo26619/Docker/blob/main/Chapter7/Image/stack6.PNG)
