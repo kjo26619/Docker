@@ -30,7 +30,7 @@ Docker Compose는 YAML 파일에 secrets가 정의되어 있으면 Container의 
 
 대신, 이를 통해서 Swarm을 사용하지 않는 환경에서도 여러 서비스를 한번에 구축하고 Secret을 적용할 수 있다.
 
-이제 Compose에서의 문제는 YAML 파일이다. Local, CI, Production 모두 제각기의 YAML 파일이 필요하다.
+Docker Compose가 Stack과 Secret을 지원하면서 이러한 문제는 사라졌지만 다음 문제는 YAML 파일이다. Local, CI, Production 환경 모두 다른 YAML 파일이 필요하다.
 
 그래서 Docker Compose에서는 여러 Compose 파일이 있는 것을 허용한다.
 
