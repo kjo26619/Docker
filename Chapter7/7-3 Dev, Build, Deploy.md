@@ -30,3 +30,42 @@ Docker Compose는 Container의 /run/secrets/<secret_name> 에 평문화된 파�
 
 대신, 이를 통해서 Swarm을 사용하지 않는 환경에서도 여러 서비스를 한번에 구축하고 Secret을 적용할 수 있다.
 
+이제 Compose에서의 문제는 YAML 파일이다. Local, CI, Production 모두 제각기의 YAML 파일이 필요하다.
+
+그래서 Docker Compose에서는 여러 Compose 파일이 있는 것을 허용한다.
+
+# Docker Compose Multiple Compose File
+
+여러 Compose 파일은 기본적으로 사용하는 docker-compose.yml 파일을 기반으로 나머지 설정을 할 수 있게끔 해주는 방법이다.
+
+이에 대한 자세한 설명은 https://docs.docker.com/compose/extends/ 이 곳을 읽어보면 된다.
+
+docker-compose.yml 에는 필요한 서비스의 이름, 서비스들의 기본 Image 구성을 넣는다. 
+
+그 다음으로 docker-compose.override.yml 이다.
+
+override.yml 파일은 기본 docker-compose.yml 파일의 설정을 가지고 와서 더 알맞게 사용한다.
+
+그래서 환경에 알맞게 YAML 파일을 자세히 작성하고 서비스를 구축할 수 있다.
+
+예를 들어, Swarm을 사용하지 않는 Local 환경에서는 Secret을 사용할 수 없기 때문에 파일 기반 Secret 으로 설정해야 한다.
+
+하지만 Swarm을 사용하는 Production 환경에서는 외부에서 입력한 Secret을 사용할 수 있게끔 YAML 파일을 작성할 수 있다.
+
+이렇게 override 를 통하여 여러 Compose 파일을 만들고 환경에 맞게 작성할 수 있다.
+
+override.yml 파일은 Docker Compose에서 기본적으로 지원하는 파일이기 때문에 docker compose up 만 해주어도 알아서 override.yml 파일이 있으면 읽어서 적용한다.
+
+그 외에 다른 override 파일을 만들고 싶다. 예를 들어서, CI 용 test.yml, Production 용 prod.yml 등을 만들 수 있다.
+
+하지만 이는 Docker Compose에서 기본적으로 지원하는 파일 형식이 아니기 때문에 지정을 해주어야 한다.
+
+지정의 경우에는 -f 옵션을 사용하면 된다.
+
+```
+# docker-compose -f (BASE FILE) -f (OVERRIDE FILE) up
+```
+
+BASE FILE의 경우에는 docker-compose.yml 이라고 보면 된다. 그리고 OVERRIDE FILE은 자신이 원하는 docker-compose.test.yml, docker-compose.prod.yml 등이다.
+
+이렇게 하여 각 환경에서도 알맞은 YAML 파일을 구축하고 Docker Compose를 사용할 수 있다.
