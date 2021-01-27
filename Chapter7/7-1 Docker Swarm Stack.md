@@ -76,6 +76,6 @@ Swarm 내에서 구동한다는 차이가 있지만 중요한 차이가 하나 �
 
 즉, Custom Image를 Stack으로 Build하면서 서비스를 구축하는 것은 불가능하다.
 
-Custom Image를 사용하기 위해서는 먼저 Build를 하고 만들어진 Image를 Stack에서 사용해야 된다.
+Custom Image를 사용하기 위해서는 먼저 Build를 하고 만들어진 Image를 가져와서 사용해야 된다.
 
 그 외에도 YAML 파일의 버전 2는 지원하지 않는다.
