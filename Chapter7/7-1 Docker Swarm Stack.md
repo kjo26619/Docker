@@ -58,6 +58,10 @@ Stack 역시 services, volumes, networks 로 이루어진다. 대신 네트워�
 
 Stack이 지워지면서 서비스, 서비스를 구성하는 Container, 네트워크가 모두 같이 삭제된다.
 
+```
+
+```
+
 ![image6](https://github.com/kjo26619/Docker/blob/main/Chapter7/Image/stack6.PNG)
 
 하지만 볼륨은 다시 사용하거나 이미 연결된 Container 들이 있을 수 있으므로 삭제 되지 않는다.
