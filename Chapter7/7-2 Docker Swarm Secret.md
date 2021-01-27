@@ -103,3 +103,27 @@ YAML파일에 작성한대로 Secret으로 만들 파일이 위치에 있어야 
 똑같이 exec를 이용해서 확인해보면 평문으로 저장되어 있는 것을 확인해볼 수 있다.
 
 ![image11](https://github.com/kjo26619/Docker/blob/main/Chapter7/Image/secret11.PNG)
+
+# External Secret
+
+Secret 기능에서 Container 외부에서 지정된 Secret을 가져올 수 있다.
+
+이는 Stack을 사용할 때 YAML파일에서 파일 위치를 지정하는 것이 아니라 외부에서 받는다고 지정하면 된다.
+
+```
+secrets:
+  psql-pw:
+    file: ./psql-pass
+```
+
+이런 식으로 설정되어 있는 파일 기반 Secret을 external로 수정해주면 된다.
+
+```
+secrets:
+  psql-pw:
+    external: true
+```
+
+이렇게 설정한 뒤 설정한 이름(psql-pw)으로 Secret을 만들어주면 된다.
+
+Secret 리스트에 있다면 Stack이 서비스를 만들면서 파일이 아닌 Secret 리스트에서 가져와서 사용한다.
