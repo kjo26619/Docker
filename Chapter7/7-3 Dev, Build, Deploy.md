@@ -26,7 +26,7 @@ Docker Compose를 이용하면 Stack처럼 쉽게 서비스를 구축한다. 그
 
 물론, 파일 기반 Secret만 지원하며 외부에서 정의하는 Secret은 사용할 수 없다. 그리고 Secret이 동작하는 것도 아니다. YAML 파일에서 secrets 섹션이 있어도 돌아가는 것이다.
 
-Docker Compose는 Container의 /run/secrets/<secret_name> 에 평문화된 파일들을 추가해준다. 
+Docker Compose는 YAML 파일에 secrets가 정의되어 있으면 Container의 /run/secrets/<secret_name> 에 평문화된 파일들을 추가해준다. 
 
 대신, 이를 통해서 Swarm을 사용하지 않는 환경에서도 여러 서비스를 한번에 구축하고 Secret을 적용할 수 있다.
 
