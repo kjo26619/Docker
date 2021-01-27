@@ -64,17 +64,17 @@ Voting App을 만들기 위해서는 DB 서비스들인 redis와 db 서비스를
 
 docker network create 명령어로 구축하여 --driver나 -d 옵션을 사용하여 Overlay 네트워크로 구축한다.
 
-![image2]()
+![image2](https://github.com/kjo26619/Docker/blob/main/Chapter6/Image/multi2.PNG)
 
 다음으로 redis 서비스를 만들기 위해 docker service create 명령어를 사용한다.
 
-![image3]()
+![image3](https://github.com/kjo26619/Docker/blob/main/Chapter6/Image/multi3.PNG)
 
 redis는 frontend 네트워크에 속해야 하므로 --network 옵션을 이용하여 지정해준다.
 
 다음으로 db 서비스를 만든다.
 
-![image4]()
+![image4](https://github.com/kjo26619/Docker/blob/main/Chapter6/Image/multi4.PNG)
 
 db에서 Volume을 설정하는 방법은 https://docs.docker.com/storage/volumes/ 를 참고하면 된다. --mount 옵션을 사용하여 type과 source, target을 설정한다.
 
@@ -86,7 +86,7 @@ source는 db-data이고 target은 /var/lib/postgresql/data 이다.
 
 다음으로 vote 서비스를 만든다.
 
-![image5]()
+![image5](https://github.com/kjo26619/Docker/blob/main/Chapter6/Image/multi5.PNG)
 
 vote 서비스는 frontend 네트워크에 속하며 Replicas가 2개 이므로 --replicas 옵션으로 지정을 해주어야 한다.
 
@@ -94,25 +94,25 @@ vote 서비스는 frontend 네트워크에 속하며 Replicas가 2개 이므로 
 
 다음으로 result도 거의 유사하게 서비스를 만들면 된다.
 
-![image6]()
+![image6](https://github.com/kjo26619/Docker/blob/main/Chapter6/Image/multi6.PNG)
 
 마지막으로 worker 서비스를 만든다.
 
-![image7]()
+![image7](https://github.com/kjo26619/Docker/blob/main/Chapter6/Image/multi7.PNG)
 
 worker 서비스는 네트워크가 frontend, backend 모두에 속하므로 네트워크를 두 개 지정해주어야 한다.
 
 모든 서비스 생성이 완료되면 docker service ls, ps 명령어를 통해서 현재 상태를 확인해볼 수 있다.
 
-![image8]()
+![image8](https://github.com/kjo26619/Docker/blob/main/Chapter6/Image/multi8.PNG)
 
 각 서비스들이 3개의 노드에 분배되어 위치해 있는 것을 확인할 수 있다.
 
 문제가 생겼을 경우에는 ps 명령어를 통해서 무슨 문제인지 확인할 수도 있다.
 
-![image9]()
+![image9](https://github.com/kjo26619/Docker/blob/main/Chapter6/Image/multi9.PNG)
 
-![image10]()
+![image10](https://github.com/kjo26619/Docker/blob/main/Chapter6/Image/multi10.PNG)
 
 결과는 다음과 같이 나온다. 
 
