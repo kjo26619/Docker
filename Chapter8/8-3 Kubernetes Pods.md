@@ -18,7 +18,7 @@ Replication은 Docker Swarm과 마찬가지로 Pods의 복제이다.
 
 이러한 Replication들의 로드 밸런싱과 스케일링을 담당하는 것이 Replication Controller & Set이다.
 
-Replication의 수를 늘리거나 줄여서 어플리케이션이 유지할 수 있게끔 한다.
+Replication의 수를 늘리거나 줄여서 마이크로 서비스가 유지할 수 있게끔 한다.
 
 Replication Controller와 Replication Set의 차이는 그렇게 많지 않다.
 
