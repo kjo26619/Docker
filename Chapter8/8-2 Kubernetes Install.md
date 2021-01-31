@@ -42,7 +42,7 @@ Docker Swarm처럼 원하는 Advertise Address를 설정하려면 --apiserver-ad
 # kubeadm init --apiserver-advertise-address (IP ADDRESS)
 ```
 
-![image1]()
+![image1](https://github.com/kjo26619/Docker/blob/main/Chapter8/Image/install1.PNG)
 
 kubeadm init으로 클러스터 구성이 완료되고 시작한 노드가 Control Plane이 되었다면 Docker swarm과 마찬가지로 밑에 join하는 방법이 나올 것이다.
 
@@ -50,11 +50,11 @@ kubeadm init으로 클러스터 구성이 완료되고 시작한 노드가 Contr
 
 참고로 kubectl이나 kubelet의 경우 kubeadm과 같이 설치되지 않으므로 사용하려면 반드시 설치해주어야 한다.
 
-![image2]()
+![image2](https://github.com/kjo26619/Docker/blob/main/Chapter8/Image/install2.PNG)
 
 Worker 노드를 지정하기 위해 join 명령어를 사용해서 지정해주면 된다.
 
-![image3]()
+![image3](https://github.com/kjo26619/Docker/blob/main/Chapter8/Image/install3.PNG)
 
 이와 같이 구성하면 노드가 Kubernetes에 속하게 되는 방법이다.
 
@@ -68,4 +68,6 @@ kubectl은 Kubernetes용 Command Line 도구이다.
 
 kubelet은 클러스터 내의 모든 노드에서 실행되고 Pod 및 Container 시작과 같은 작업을 하는 요소이다.
 
-노드에서 다양한 기능을 kubelet으로 지정할 수 있다. join 역시 kubelet이 필요하므로 kubeadm, kubectl, kubelet은 사용하는 노드에서는 반드시 설치해주는 것이 좋다.
+kubectl과 같은 방법으로 설치하면 되며 노드에서 다양한 기능을 kubelet으로 지정할 수 있다. 
+
+join 역시 kubelet이 필요하므로 kubeadm, kubectl, kubelet은 사용하는 노드에서는 반드시 설치해주는 것이 좋다.
