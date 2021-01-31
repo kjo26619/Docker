@@ -83,3 +83,9 @@ Control Plane의 관리를 받으며 직접 Container를 실행하고 일을 하
     Container를 실행하는 소프트웨어.
     
     여러가지 Container를 지원한다. ( Docker, Containerd, CRI-O , Kubernetes CRI )
+    
+이 외에도 Addon 이라고 해서 클러스터에 기능을 추가할 수 있다.
+
+DNS, Web UI ( Dashboard ), Container Resource Monitoring, Cluster-level Logging 등이 있다.
+
+
