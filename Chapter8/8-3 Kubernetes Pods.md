@@ -12,7 +12,7 @@ YAML 파일을 보고 Pods를 구성하고 관리하는 것이 Kubernetes의 주
 
 Pods를 만드는데 사용하는 YAML 파일의 구성은 다음과 같다.
 
-![image1]()
+![image1](https://github.com/kjo26619/Docker/blob/main/Chapter8/Image/pod1.PNG)
 
 Pods를 만드는 YAML 파일에는 기본적으로 4가지 섹션( apiVersion, kind, metadata, spec )이 있다.
 
@@ -32,7 +32,7 @@ metadata는 객체가 가지고 있는 이름과 Labels를 지정한다.
 # kubectl create -f (YAML FILE)
 ```
 
-![image2]()
+![image2](https://github.com/kjo26619/Docker/blob/main/Chapter8/Image/pod2.PNG)
 
 현재 있는 Pods의 리스트를 확인하기 위해서는 kubectl get pods 명령을 사용하면 된다.
 
@@ -44,7 +44,7 @@ metadata는 객체가 가지고 있는 이름과 Labels를 지정한다.
 # kubectl describe pod (POD NAME)
 ```
 
-![image3]()
+![image3](https://github.com/kjo26619/Docker/blob/main/Chapter8/Image/pod3.PNG)
 
 자신이 사용하는 도구에 따라서 어느 노드가 가져가는 지 확인할 수 있다. ( 저는 Kind를 사용하여서 kind-worker2에 들어간 것을 확인해볼 수 있습니다. )
 
@@ -54,7 +54,7 @@ Pods를 삭제하고 싶을 때에는 kubectl delete 명령을 사용하면 된�
 # kubectl delete pods (POD NAME)
 ```
 
-![image4]()
+![image4](https://github.com/kjo26619/Docker/blob/main/Chapter8/Image/pod4.PNG)
 
 # Replication Controller & Set
 
@@ -76,7 +76,7 @@ Set은 일치하는 Labels에 여러 조건을 걸 수 있다.
 
 Replica Set을 만들기 위한 YAML 파일 구성은 다음과 같다.
 
-![image5]()
+![image5](https://github.com/kjo26619/Docker/blob/main/Chapter8/Image/pod5.PNG)
 
 구성은 Pods와 똑같다는 것을 알 수 있다.
 
@@ -92,7 +92,7 @@ metadata는 Pods와 다르지 않으며 자신이 원하는 이름과 Labels를 
 
 만드는 명령어는 kubectl create 명령어로 Pods와 같다.
 
-![image6]()
+![image6](https://github.com/kjo26619/Docker/blob/main/Chapter8/Image/pod6.PNG)
 
 대신, Replica Set을 확인하기 위해서는 kubectl get 에서 pods가 아닌 replicaset으로 지정을 해주어야 한다.
 
@@ -102,7 +102,7 @@ metadata는 Pods와 다르지 않으며 자신이 원하는 이름과 Labels를 
 
 YAML 파일에서 지정한 바와 같이 Pods가 3개로 유지되고 있으며 Pods를 삭제하여도 Replica Set이 다른 Pod를 추가하여 수를 유지한다.
 
-![image7]()
+![image7](https://github.com/kjo26619/Docker/blob/main/Chapter8/Image/pod7.PNG)
 
 그리고 Replica Set을 이용해서 Pods의 Replica 수를 수정할 수 있다. 이를 스케일링이라 하며 kubectl scale 명령어를 사용하면 된다.
 
@@ -110,7 +110,7 @@ YAML 파일에서 지정한 바와 같이 Pods가 3개로 유지되고 있으며
 # kubectl scale --replicas=(NO. OF REPLICA) replicaset (REPLICASET NAME)
 ``` 
 
-![image8]()
+![image8](https://github.com/kjo26619/Docker/blob/main/Chapter8/Image/pod8.PNG)
 
 Replica Set은 스케일링 되면 이를 유지하기 위해 Pod를 생성/제거 한다.
 
@@ -120,7 +120,7 @@ kubectl scale 명령어를 사용할 때 -f 옵션을 통해서 YAML 파일을 �
 # kubectl scale --replicas=(NO. OF REPLICA) -f (YAML FILE)
 ```
 
-![image9]()
+![image9](https://github.com/kjo26619/Docker/blob/main/Chapter8/Image/pod9.PNG)
 
 Replica Set 역시 kubectl delete 명령어를 사용하면 된다. 그러나, 뒤에 붙는 pods를 replicaset으로 수정해주면 된다.
 
@@ -128,7 +128,7 @@ Replica Set 역시 kubectl delete 명령어를 사용하면 된다. 그러나, �
 # kubectl delete replicaset (REPLICASET NAME)
 ```
 
-![image10]()
+![image10](https://github.com/kjo26619/Docker/blob/main/Chapter8/Image/pod10.PNG)
 
 Replica Set이 삭제되면 속해 있던 Pods도 모두 종료되고 이후에는 삭제되는 것을 확인할 수 있다.
 
@@ -146,7 +146,7 @@ Kubernetes에서 Pods를 만들고 관리하는 것은 Deployments를 이용하�
 
 Deployments를 만드는 명령어도 kubectl create로 같다.
 
-![image14]()
+![image14](https://github.com/kjo26619/Docker/blob/main/Chapter8/Image/pod14.PNG)
 
 Deployments의 YAML 파일은 Replica Set 구성과 큰 차이가 없다.
 
@@ -158,7 +158,7 @@ kind가 Deployment로 바꾸면 되며, 따로 Replica Set을 지정하지 않�
 # kubectl get deployments
 ```
 
-![image11]()
+![image11](https://github.com/kjo26619/Docker/blob/main/Chapter8/Image/pod11.PNG)
 
 Kubernetes에 있는 모든 Pods, Replica Sets, Deployments 등을 보고 싶다면 kubectl get all을 사용하면 모든 리스트를 한번에 보여준다.
 
@@ -166,7 +166,7 @@ Kubernetes에 있는 모든 Pods, Replica Sets, Deployments 등을 보고 싶다
 # kubectl get all
 ```
 
-![image12]()
+![image12](https://github.com/kjo26619/Docker/blob/main/Chapter8/Image/pod12.PNG)
 
 Deployments도 스케일링 할 때는 똑같이 kubectl scale 명령을 사용하면 된다. 
 
@@ -176,4 +176,4 @@ Deployments도 스케일링 할 때는 똑같이 kubectl scale 명령을 사용�
 # kubectl delete deployments (DEPLOYMENT NAME)
 ```
 
-![image13]()
+![image13](https://github.com/kjo26619/Docker/blob/main/Chapter8/Image/pod13.PNG)
