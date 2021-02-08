@@ -20,5 +20,12 @@ Namespace 들은 모두 고유한 이름을 가져야 한다. kube- 로 시작�
 
 4. kube-node-lease : 노드 하트비트의 성능을 향상시키기 위한 리스 오브젝트 용 Namespace.
 
+# Namespace DNS
 
+각 Namespace끼리는 DNS가 있어서 통신이 가능하다.
 
+대신, 다른 Namespace 내의 Container에게 통신하거나 연결하기 위해서는 Namespace를 지정해주어야 한다.
+
+이 형식은 <service-name>.<namespace-name>.svc.cluster.local 이다.
+
+# 
