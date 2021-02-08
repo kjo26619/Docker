@@ -28,4 +28,16 @@ Namespace 들은 모두 고유한 이름을 가져야 한다. kube- 로 시작�
 
 이 형식은 <service-name>.<namespace-name>.svc.cluster.local 이다.
 
-# 
+# Namespace Command
+
+Namespace를 만들기 위해서는 Deployments, Pods, ReplicaSet 등과 같이 kubectl create 명령을 이용하면 된다.
+
+YAML파일을 이용하거나 직접 명령어로 만들어줄 수 있다.
+
+```
+# kubectl create -f (YAML FILE)
+
+# kubectl create namespace (NAMESPACE NAME)
+```
+
+
