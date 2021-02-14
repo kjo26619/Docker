@@ -10,9 +10,21 @@ Kubernetes의 노드들의 내부와 외부를 연결해주는 것이 Services�
 
 # Services Types
 
-Service는 총 3가지의 타입이 존재한다. NodePort, ClusterIP, LoadBalancer이다.
+Service는 총 3가지의 타입이 존재한다. ClusterIP, NodePort, LoadBalancer이다.
 
-1. NodePort
+1. ClusterIP
+
+    CluterIP는 Service의 기본 타입으로 클러스터 내부를 연결해주는 역할을 한다.
+    
+    각 Service는 Virtual IP를 가지게 되는데 이들이 가진 Port가 Pod와 연결된다.
+    
+    이렇게 Serivce를 사용하면 Pod끼리의 연결이 용이해지며 부하를 분산할 때도 효과적이다.
+    
+    ![imageci](https://d33wubrfki0l68.cloudfront.net/27b2978647a8d7bdc2a96b213f0c0d3242ef9ce0/e8c9b/images/docs/services-iptables-overview.svg)
+    
+    ( 출처 : https://kubernetes.io/docs/concepts/services-networking/service/ )
+
+2. NodePort
 
     NodePort는 노드 내의 Pod와 외부를 연결해주는 역할을 한다.
     
@@ -22,6 +34,12 @@ Service는 총 3가지의 타입이 존재한다. NodePort, ClusterIP, LoadBalan
     
     이러한 Service는 Kubernetes의 노드 전체에 존재하며 지정된 NodePort로 들어오는 요청을 각 노드에 분산시켜서 연결한다.
     
-    ![image1](https://theithollow.com/wp-content/uploads/2019/01/image-20.png)
+    ![imagenp](https://theithollow.com/wp-content/uploads/2019/01/image-20.png)
     
     ( 출처 : https://theithollow.com/2019/02/05/kubernetes-service-publishing/ )
+    
+3. LoadBalancer
+    
+    
+    
+
