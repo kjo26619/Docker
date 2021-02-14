@@ -42,9 +42,9 @@ YAML파일을 이용하거나 직접 명령어로 만들어줄 수 있다.
 
 YAML 파일은 apiVersion이 v1이고 kind를 Namespace로 설정한 뒤 metadata에서 이름을 설정해주면 된다.
 
-![image1]()
+![image1](https://github.com/kjo26619/Docker/blob/main/Chapter8/Image/namespace1.PNG)
 
-![image2]()
+![image2](https://github.com/kjo26619/Docker/blob/main/Chapter8/Image/namespace2.PNG)
 
 만들어진 Namespace의 목록을 확인하고 싶으면 kubectl get namespace 명령어를 사용하면 된다.
 
@@ -52,7 +52,7 @@ YAML 파일은 apiVersion이 v1이고 kind를 Namespace로 설정한 뒤 metadat
 # kubectl get namespace
 ```
 
-![image3]()
+![image3](https://github.com/kjo26619/Docker/blob/main/Chapter8/Image/namespace3.PNG)
 
 그리고 Namespace를 정하고 Pod, ReplicaSet, Deployment 등을 만들기 위해서는 기존의 명령어에서 --namespace 옵션을 추가해주면 된다.
 
@@ -64,9 +64,9 @@ Pod를 만들기 위해 임의의 YAML 파일을 지정한다.
 # kubectl get pods --namespace=(NAMESPACE NAME)
 ```
 
-![image4]()
+![image4](https://github.com/kjo26619/Docker/blob/main/Chapter8/Image/namespace4.PNG)
 
-![image5]()
+![image5](https://github.com/kjo26619/Docker/blob/main/Chapter8/Image/namespace5.PNG)
 
 --namespace 옵션을 추가하면 원하는 Namespace의 상태를 확인할 수 있다.
 
@@ -78,7 +78,7 @@ Kubernetes에서 처음 Namespace는 default로 설정되어 있어서 Namespace
 # kubectl config set-context $(kubectl config current-context) --namespace=(NAMESPACE NAME)
 ```
 
-![image6]()
+![image6](https://github.com/kjo26619/Docker/blob/main/Chapter8/Image/namespace6.PNG)
 
 처음에 kubectl get pods 명령어로 확인할 때는 아무런 Pod가 없다. 왜냐하면 dev Namespace에 Pod를 만들었고 default에는 만들지 않았기 때문이다.
 
@@ -94,7 +94,7 @@ Kubernetes에서 처음 Namespace는 default로 설정되어 있어서 Namespace
 
 ResourceQuota 역시 YAML 파일로 지정할 수 있다. 그리고 생성할 때는 kubectl create -f 명령어를 사용하면 된다.
 
-![image7]()
+![image7](https://github.com/kjo26619/Docker/blob/main/Chapter8/Image/namespace7.PNG)
 
 ResourceQuota를 확인할 때에는 kubectl get resourcequota 명령어를 사용하면 된다.
 
@@ -102,7 +102,7 @@ ResourceQuota를 확인할 때에는 kubectl get resourcequota 명령어를 사�
 # kubectl get resourcequota
 ```
 
-![image8]()
+![image8](https://github.com/kjo26619/Docker/blob/main/Chapter8/Image/namespace8.PNG)
 
 ResourceQuota에 대한 자세한 설정은 https://kubernetes.io/docs/concepts/policy/resource-quotas/ 에서 확인할 수 있다.
 
