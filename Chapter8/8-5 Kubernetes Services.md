@@ -40,6 +40,8 @@ Service는 총 3가지의 타입이 존재한다. ClusterIP, NodePort, LoadBalan
     
 3. LoadBalancer
     
+    LoadBalancer는 클러스터를 외부에 노출시키기 위한 Service이다. LoadBalancer는 인터넷과의 연결을 맡고 외부에서 요청이 들어오면 이를 클러스터 노드에 분산시켜 전달하는 역할이다.
     
+    LoadBalancer의 설정은 클라우드가 필요하며 클라우드에서 제공하는 LoadBalancer와 연결하고 클라우드 LoadBalancer의 IP를 사용하여 외부와 연결한다.
     
 
